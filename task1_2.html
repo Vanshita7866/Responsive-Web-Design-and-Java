@@ -25,17 +25,17 @@
       padding: 20px;
     }
 
-    h1,h2{
-        text-align: center;
-        background-color: beige;
-        color: darkslategrey;
-        padding: 15%;
+    h1, h2 {
+      text-align: center;
+      background-color: beige;
+      color: darkslategrey;
+      padding: 15px;
     }
 
-    p{
-        background-color: rgb(103, 127, 171); 
-        padding: 10%; 
-        color: rgb(255, 255, 255)
+    p {
+      background-color: rgb(103, 127, 171);
+      padding: 10px;
+      color: rgb(255, 255, 255);
     }
     
   </style>
@@ -50,53 +50,57 @@
     <p>Open the browser's developer console to see the output of the implemented JavaScript concepts. These concepts include string methods, number methods, array methods, date methods, and function methods. The code for these concepts can be found in the embedded JavaScript section of this page.</p>
   </div>
 
+  <div class="container">
+    <h2>JavaScript Output</h2>
+    <p id="output"></p>
+  </div>
+
   <script>
+    
+    const outputElement = document.getElementById("output");
+
     console.log("##### String methods #######");
     const str = "Responsive web app";
-    console.log("String Length:", str.length);
-    console.log("Uppercase:", str.toUpperCase());
-    console.log("Substring:", str.substring(0, 5));
-    console.log("Index of 'World':", str.indexOf("World"));
-    console.log("Reversed:", str.split("").reverse().join(""));
+    outputElement.innerHTML += "<strong>String Length:</strong> " + str.length + "<br>";
+    outputElement.innerHTML += "<strong>Uppercase:</strong> " + str.toUpperCase() + "<br>";
+    outputElement.innerHTML += "<strong>Substring:</strong> " + str.substring(0, 5) + "<br>";
+    outputElement.innerHTML += "<strong>Index of 'World':</strong> " + str.indexOf("World") + "<br>";
+    outputElement.innerHTML += "<strong>Reversed:</strong> " + str.split("").reverse().join("") + "<br>";
 
-   
     console.log("##### Number methods #######");
     const num = 37.25;
-    console.log("Fixed:", num.toFixed(2));
-    console.log("Exponential:", num.toExponential(3));
-    console.log("Precision:", num.toPrecision(4));
-    console.log("Binary:", num.toString(2));
-    console.log("Rounded:", Math.round(num));
+    outputElement.innerHTML += "<strong>Fixed:</strong> " + num.toFixed(2) + "<br>";
+    outputElement.innerHTML += "<strong>Exponential:</strong> " + num.toExponential(3) + "<br>";
+    outputElement.innerHTML += "<strong>Precision:</strong> " + num.toPrecision(4) + "<br>";
+    outputElement.innerHTML += "<strong>Binary:</strong> " + num.toString(2) + "<br>";
+    outputElement.innerHTML += "<strong>Rounded:</strong> " + Math.round(num) + "<br>";
 
-  
     console.log("##### Array methods #######");
-    const arr = [9,3,1,6,4];
-    console.log("Sorted:", arr.sort());
-    console.log("Filtered:", arr.filter(num => num > 3));
-    console.log("Mapped:", arr.map(num => num * 2));
-    console.log("Joined:", arr.join("-"));
-    console.log("Sum:", arr.reduce((sum, num) => sum + num, 0));
+    const arr = [9, 3, 1, 6, 4];
+    outputElement.innerHTML += "<strong>Sorted:</strong> " + arr.sort() + "<br>";
+    outputElement.innerHTML += "<strong>Filtered:</strong> " + arr.filter(num => num > 3) + "<br>";
+    outputElement.innerHTML += "<strong>Mapped:</strong> " + arr.map(num => num * 2) + "<br>";
+    outputElement.innerHTML += "<strong>Joined:</strong> " + arr.join("-") + "<br>";
+    outputElement.innerHTML += "<strong>Sum:</strong> " + arr.reduce((sum, num) => sum + num, 0) + "<br>";
 
-  
     console.log("##### Date methods #######");
     const now = new Date();
-    console.log("Current Date:", now);
-    console.log("Year:", now.getFullYear());
-    console.log("Month:", now.getMonth());
-    console.log("Day:", now.getDate());
-    console.log("Formatted:", now.toLocaleString());
+    outputElement.innerHTML += "<strong>Current Date:</strong> " + now + "<br>";
+    outputElement.innerHTML += "<strong>Year:</strong> " + now.getFullYear() + "<br>";
+    outputElement.innerHTML += "<strong>Month:</strong> " + now.getMonth() + "<br>";
+    outputElement.innerHTML += "<strong>Day:</strong> " + now.getDate() + "<br>";
+    outputElement.innerHTML += "<strong>Formatted:</strong> " + now.toLocaleString() + "<br>";
 
-    
     console.log("##### Function methods #######");
     function greetings(name) {
       return "Hello, " + name + "!";
     }
-    console.log(greetings("vanshita"));
+    outputElement.innerHTML += "<strong>Greet Function:</strong> " + greetings("vanshita") + "<br>";
 
     const add = function(x, y) {
       return x + y;
     }
-    console.log("Sum of 3 and 4 :", add(3, 4));
+    outputElement.innerHTML += "<strong>Sum of 3 and 4 :</strong> " + add(3, 4) + "<br>";
   </script>
 </body>
 </html>
